@@ -1,0 +1,101 @@
+{
+  "name": "rick-and-morty-app",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/rick-and-morty-app/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/rick-and-morty-app",
+        "index": "apps/rick-and-morty-app/src/index.html",
+        "main": "apps/rick-and-morty-app/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/rick-and-morty-app/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/rick-and-morty-app/public",
+            "output": "/assets"
+          }
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "apps/rick-and-morty-app/src/styles.scss",
+          "node_modules/ngx-spinner/animations/ball-spin-clockwise-fade.css"
+        ],
+        "scripts": [
+          "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/rick-and-morty-app/src/environments/environment.ts",
+              "with": "apps/rick-and-morty-app/src/environments/environment.development.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "rick-and-morty-app:build:production"
+        },
+        "development": {
+          "buildTarget": "rick-and-morty-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "rick-and-morty-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ]
+    }
+  },
+  "tags": []
+}

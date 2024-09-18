@@ -1,0 +1,9 @@
+.content-card {
+    max-width: 400px;
+    background-color: #68ab46;
+    border-color: black;
+}
+
+span {
+    font-weight: 100;
+}

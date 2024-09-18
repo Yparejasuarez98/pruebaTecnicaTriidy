@@ -1,0 +1,14 @@
+<div class="background">
+    <div class="container ">
+        <button mat-flat-button class="mt-3" (click)="returnDashboard()">Go back</button>
+        <mat-card class="content-card mt-3 p-2" appearance="outlined">
+            <lib-my-card [urlImage]="character.image" [data]="character" [showButtonDetail]="false"></lib-my-card>
+            <mat-card-content class="mt-3">
+                <h5>Specie: <span>{{character.species}}</span></h5>
+                <h5>Origin: <span>{{character.origin.name}}</span></h5>
+                <h5>Location: <span>{{character.location.name}}</span></h5>
+                <h5>Status: <span>{{character.status}}</span></h5>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

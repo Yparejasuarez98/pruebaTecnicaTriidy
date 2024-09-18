@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #68ab46;
+}
+
+.back-toolbar {
+    background-color: #0a1607 !important;
+}

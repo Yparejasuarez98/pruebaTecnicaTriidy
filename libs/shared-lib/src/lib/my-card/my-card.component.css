@@ -1,0 +1,24 @@
+.cursor {
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+}
+
+span {
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.button-content {
+    margin-top: 10px;
+    border: none;
+    color: rgb(22, 22, 172);
+    background-color: transparent;
+}
+
+.content-body {
+    display: flex;
+    justify-content: flex-end;
+}

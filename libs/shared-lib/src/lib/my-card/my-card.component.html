@@ -1,0 +1,9 @@
+<div>
+    <h4><strong> Name: </strong> <span>{{data.name}}</span></h4>
+</div>
+<img src={{urlImage}} alt={{data.name}} class="cursor" (click)="details(data)">
+@if(showButtonDetail) {
+<div class="content-body">
+    <button class="button-content" (click)="details(data)">See details</button>
+</div>
+}

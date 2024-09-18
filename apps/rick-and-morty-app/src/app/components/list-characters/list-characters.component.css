@@ -1,0 +1,31 @@
+.content-card {
+    max-width: 350px;
+    background-color: #68ab46;
+    border-color: black;
+}
+
+span {
+    font-weight: 100;
+}
+
+.favorite {
+    color: gold;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.color {
+    color: white;
+}
+
+.background {
+    background-image: url('../../../assets/img/space.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.color-icon {
+    color: white;
+}
